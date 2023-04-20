@@ -2,9 +2,9 @@ import React from 'react';
 
 const LeftNavigation = () => {
     return (
-        <div>
-            Left navigation
-        </div>
+      <div>
+        <h2 className="text-danger">Left navigation</h2>
+      </div>
     );
 };
 
