@@ -2,13 +2,16 @@ import React from 'react';
 import moment from "moment";
 import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
       <div>
         <Container>
           <div className="text-center">
-            <h1 className="font_lobster text-center ">Beyond New Buzz</h1>
+            <h1 className="font_lobster text-center ">
+              <Link className="text-decoration-none text-dark" to="/"> Beyond New Buzz</Link>
+            </h1>
             <p>Journalism Without Fear or Favour</p>
             <p>{moment().format("dddd, MMMM D,  YYYY")}</p>
           </div>
@@ -31,9 +34,8 @@ const Header = () => {
                     <Nav.Link href="#features">Home</Nav.Link>
                     <Nav.Link href="#pricing">About</Nav.Link>
                     <Nav.Link href="#pricing">Career</Nav.Link>
-                   
                   </Nav>
-                  <Nav className="d-flex align-items-center"  >
+                  <Nav className="d-flex align-items-center">
                     <Nav.Link href="#deets">More deets</Nav.Link>
                     <Nav.Link eventKey={2} href="#memes">
                       <Button variant="secondary">Secondary</Button>
