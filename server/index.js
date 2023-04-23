@@ -1,5 +1,6 @@
 const express = require('express')
 const categories = require('./data/categories.json')
+const news = require('./data/news.json')
 var cors = require("cors");
 
 
@@ -13,6 +14,30 @@ app.get('/', (req, res)=> {
 
 app.get('/categories', (req, res)=> {
     res.send(categories);
+} )
+
+
+app.get('/news', (req, res)=> {
+    res.send(news)
+})
+
+app.get('/news/:id', (req, res)=> {
+    const id = req.params.id;
+    const selectedNews =  news.find(n => n._id === id)
+    res.send(selectedNews)
+} )
+
+app.get('/categories/:id', (req, res)=> {
+    const id = req.params.id 
+    if(parseInt(id, 10) ===0){
+        res.send(news)
+    }else {
+        const categoryNews = news.filter(
+          (n) => parseInt(n.category_id, 10) === parseInt(id, 20)
+        );
+        res.send(categoryNews);
+    }
+    
 } )
 
 
