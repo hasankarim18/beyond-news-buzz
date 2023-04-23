@@ -2,7 +2,7 @@ import React from 'react';
 import moment from "moment";
 import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -10,7 +10,10 @@ const Header = () => {
         <Container>
           <div className="text-center">
             <h1 className="font_lobster text-center ">
-              <Link className="text-decoration-none text-dark" to="/"> Beyond New Buzz</Link>
+              <Link className="text-decoration-none text-dark" to="/">
+                {" "}
+                Beyond New Buzz
+              </Link>
             </h1>
             <p>Journalism Without Fear or Favour</p>
             <p>{moment().format("dddd, MMMM D,  YYYY")}</p>
@@ -19,7 +22,7 @@ const Header = () => {
             style={{ background: "#F3F3F3" }}
             className="d-flex mt-3 mb-3 p-2"
           >
-            <Button variant="danger">Danger</Button>
+            <Button variant="danger">Breaking</Button>
             <Marquee className="text-danger" speed={50}>
               I can be a React component, multiple React components, or just
               some text.
@@ -31,8 +34,17 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                   <Nav className="mx-auto">
-                    <Nav.Link href="#features">Home</Nav.Link>
-                    <Nav.Link href="#pricing">About</Nav.Link>
+                   
+                      <NavLink className="nav-link" to="/">
+                        {" "}
+                        Home
+                      </NavLink>
+                   
+                    
+                      <NavLink className="nav-link" to="/about">
+                        About{" "}
+                      </NavLink>
+                    
                     <Nav.Link href="#pricing">Career</Nav.Link>
                   </Nav>
                   <Nav className="d-flex align-items-center">

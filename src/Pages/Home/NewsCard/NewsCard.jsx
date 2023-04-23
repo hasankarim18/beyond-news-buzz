@@ -6,7 +6,7 @@ import { FaBookmark, FaRegBookmark, FaRegEye, FaRegStar, FaShareAlt, FaStar } fr
 import Rating from 'react-rating';
 
 const NewsCard = ({news}) => {
-    console.log(news);
+   
     const { title, _id, details, image_url, author, total_view, rating } = news;
     return (
       <Card className="mb-4">

@@ -8,7 +8,7 @@ import router from './Routes/Routes'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <React.Fragment>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </React.Fragment>,
 )

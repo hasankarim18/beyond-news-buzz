@@ -13,7 +13,7 @@ const LeftNavigation = () => {
       .catch((errro) => console.log(errro));
   }, [])
 
-  console.log(categories);
+ 
 
     return (
       <div>
