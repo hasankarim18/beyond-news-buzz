@@ -1,26 +1,23 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 import Header from '../Pages/Shared/Header/Header';
-import Footer from '../Pages/Shared/Footer/Footer';
 import { Col, Container, Row } from 'react-bootstrap';
-import LeftNavigation from '../Pages/Shared/LeftNavigation/LeftNavigation';
+import { Outlet } from 'react-router-dom';
 import RightNavigation from '../Pages/Shared/RightNavigation/RightNavigation';
+import Footer from '../Pages/Shared/Footer/Footer';
 
-
-const Main = () => {
+const NewsLayout = () => {
     return (
       <>
         <Header />
         <Container>
           <Row>
-            <Col lg={3} >
-                <LeftNavigation />
+            <Col lg={9}>
+              {/* <Outlet /> */}
+              <h1>News details Main Lay out</h1>
+              <Outlet />
             </Col>
-            <Col lg={6} >
-               <Outlet />
-            </Col>
-            <Col lg={3} >
-                <RightNavigation />
+            <Col lg={3}>
+              <RightNavigation />
             </Col>
           </Row>
         </Container>
@@ -30,4 +27,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default NewsLayout;
