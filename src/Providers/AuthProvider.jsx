@@ -9,7 +9,7 @@ const AuthProvider = ({children}) => {
 
     const auth = getAuth(app)
 
-    const user = {displayName: 'Muri Khan'}
+    const user = null
 
     console.log(auth);
 
