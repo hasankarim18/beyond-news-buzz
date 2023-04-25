@@ -5,10 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './Routes/Routes'
+import AuthProvider from './Providers/AuthProvider'
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>
-    <RouterProvider router={router} />
-  </React.Fragment>,
-)
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.Fragment>
+);

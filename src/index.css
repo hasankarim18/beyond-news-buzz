@@ -7,3 +7,12 @@ body{
 .font_lobster{
     font-family: 'Lobster Two', cursive!important;
 }
+
+.nav-link{
+    font-size: 18px!important;
+    font-weight: 500;
+}
+
+.nav-link.active{
+    color: red!important;
+}

@@ -7,9 +7,12 @@ const LeftNavigation = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch("https://newspaper.hasanmahbub.com/categories")
       .then((res) => res.json())
-      .then((data) => setCategories(data))
+      .then((data) =>{
+       
+        setCategories(data);
+      } )
       .catch((errro) => console.log(errro));
   }, [])
 
