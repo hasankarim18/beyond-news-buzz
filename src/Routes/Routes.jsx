@@ -8,6 +8,7 @@ import AddCategory from '../Pages/Home/Category/AddCategory';
 import LoginLayout from '../Layout/LoginLayout';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Login/Register';
+import PrivateRoute from './PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate to="/category/0" />
+        element: <Navigate to="/category/0" />,
       },
       {
         path: "/login",
@@ -28,9 +29,9 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path:"/logout",
-        element:<Navigate to="/category/0" />
-      }
+        path: "/logout",
+        element: <Navigate to="/category/0" />,
+      },
     ],
   },
   {
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ":id",
-        element: <News />,
+        element: <PrivateRoute ><News /></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/news/${params.id}`),
       },

@@ -1,11 +1,23 @@
 import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
 const NavigationBar = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logout, setUser} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const handleLogout = ()=> {
+      logout()
+      .then(() => {
+      //  console.log('sign out successfulk ')
+        setUser(null)
+        navigate('/')
+      })
+      .catch(error => {
+        console.log('sign out failed;', error);
+      })
+    }
     return (
       <Container className="mb-3">
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -39,13 +51,14 @@ const NavigationBar = () => {
                   </Nav.Link>
                 )}
                 {user ? (
-                  <Link
+                  <button
+                    onClick={handleLogout}
                     to="/logout"
                     className="btn btn-danger"
                     variant="secondary"
                   >
                     Logout
-                  </Link>
+                  </button>
                 ) : (
                   <Link
                     to="/login"
