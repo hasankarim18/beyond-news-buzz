@@ -30,7 +30,7 @@ const PrivateRoute = ({children}) => {
  * 2.. if user is logged in allow them to visit the route 
  * 3. else redirect them to the other page
  * 4. setup the private router 
- * 
+ * 5. handle loading in create user and signin user and observer
  */
 
 export default PrivateRoute;

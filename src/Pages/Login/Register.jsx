@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../Providers/AuthProvider';
+import { toast } from "react-toastify";
+
 
 const Register = () => {
-
+  const [accept, setAccept] = useState(false)
   const { createUser } = useContext(AuthContext);
   const navigate = useNavigate()
+  const signUpNotify = ()=> toast('SignUp Successful Please Login')
 
+  const accHandler = (event)=> { 
+   setAccept(event.target.checked)
+  }
+
+ 
   const submitHandler = (event)=> {
     event.preventDefault()
     const form = event.target
@@ -15,19 +23,20 @@ const Register = () => {
     const email = form.email.value
     const password = form.password.value 
     const photo = form.photo.value
-
-   
-    createUser(email, password)
-    .then(res => {
-      const createdUser = res.user;
-     // navigate('/login')
-      console.log(createdUser);
-
-    })
-    .catch( (error)=> {
-      console.log(error);
-
-    })
+    
+    if(accept){
+      createUser(email, password)
+        .then((res) => {
+          const createdUser = res.user;
+          signUpNotify()
+           navigate('/login')
+         
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }     
+    
   }
 
     return (
@@ -79,13 +88,20 @@ const Register = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
+                  onClick={accHandler}
                   name="accept"
                   type="checkbox"
-                  label="Accept terms and condition"
+                  label={
+                    <>
+                      Accept <Link to="/terms"> Terms and Condition </Link>{" "}
+                    </>
+                  }
                 />
               </Form.Group>
+
               <div className="mb-3">
                 <input
+                  disabled={!accept}
                   value="Sign Up"
                   type="submit"
                   className="btn btn-success"

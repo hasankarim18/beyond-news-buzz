@@ -9,6 +9,7 @@ import LoginLayout from '../Layout/LoginLayout';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Login/Register';
 import PrivateRoute from './PrivateRoute';
+import Terms from '../Pages/Shared/Terms/Terms';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         path: "/logout",
         element: <Navigate to="/category/0" />,
       },
+      {
+        path:'/terms',
+        element:<Terms />
+      }
     ],
   },
   {
