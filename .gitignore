@@ -12,6 +12,7 @@ server/node_modules
 dist
 dist-ssr
 *.local
+.env.local
 
 /src/firebase.config.js
 
