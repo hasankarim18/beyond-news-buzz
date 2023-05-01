@@ -13,7 +13,7 @@ const NewsLayout = () => {
           <Row>
             <Col lg={9}>
               {/* <Outlet /> */}
-              <h1>News details Main Lay out</h1>
+              
               <Outlet />
             </Col>
             <Col lg={3}>

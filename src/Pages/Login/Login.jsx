@@ -8,8 +8,8 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    const from = location?.state?.from?.pathname || '/'
-;
+    const from = location?.state?.from?.pathname || "/category/0";
+
    
 
   const loginHandler = (event)=> {

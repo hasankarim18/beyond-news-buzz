@@ -13,13 +13,9 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
      const unsubscirbe = onAuthStateChanged(auth, (loggedUser) => {
         if (loggedUser) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          // const uid = user.uid;
+          
           setUser(loggedUser);
-        //  console.log("logged in user inside observer");
-        //  console.log(loggedUser);
-          // ...
+          setLoading(false)
         } else {
           // User is signed out
           // ...
@@ -57,6 +53,7 @@ const AuthProvider = ({children}) => {
       signInUser,
       setUser,
       logout,
+      loading,
     };
 
     return (
