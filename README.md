@@ -5,6 +5,14 @@
 
 
 
+#### Netilfy deploy tips:
+- To deploy single page app in netlify first create _redirects file inside public folder
+- Then write ` /* /index.html 200 ` insidte 
+- Then run ` npm run build`
+- cd `dist`
+- netlify `deploy --prod`
+
+
 
 
 #### Packages used 
