@@ -1,6 +1,8 @@
 
-#### (vercel server link)[https://beyond-news-buzz-server.vercel.app]
-#### (netlify frontend link)[https://snazzy-stroopwafel-585d2a.netlify.app/category/0]
+#### [vercel server link](https://beyond-news-buzz-server.vercel.app)
+#### [netlify frontend link](https://snazzy-stroopwafel-585d2a.netlify.app/)
+#### [firebase frontend link](https://the-news-dragon-7b7e2.web.app/)
+
 
 
 
