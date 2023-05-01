@@ -11,6 +11,7 @@ import Register from '../Pages/Login/Register';
 import PrivateRoute from './PrivateRoute';
 import Terms from '../Pages/Shared/Terms/Terms';
 
+console.log(import.meta.env.VITE_SEVER_LINK);
 
 const router = createBrowserRouter([
   {
@@ -34,9 +35,9 @@ const router = createBrowserRouter([
         element: <Navigate to="/category/0" />,
       },
       {
-        path:'/terms',
-        element:<Terms />
-      }
+        path: "/terms",
+        element: <Terms />,
+      },
     ],
   },
   {
@@ -52,7 +53,9 @@ const router = createBrowserRouter([
         path: ":id",
         element: <Category />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `https://beyond-news-buzz-server.vercel.app/categories/${params.id}`
+          ),
       },
       {
         path: "add-category",
@@ -66,9 +69,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: ":id",
-        element: <PrivateRoute ><News /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <News />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/news/${params.id}`),
+          fetch(
+            `https://beyond-news-buzz-server.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },

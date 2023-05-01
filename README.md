@@ -1,4 +1,7 @@
 
+#### (vercel server link)[https://beyond-news-buzz-server.vercel.app]
+#### (netlify frontend link)[https://snazzy-stroopwafel-585d2a.netlify.app/category/0]
+
 
 
 
